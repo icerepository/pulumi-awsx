@@ -21,6 +21,7 @@ import * as ecs from ".";
 import * as x from "..";
 import * as role from "../role";
 import * as utils from "../utils";
+import {input as inputs} from "@pulumi/aws/types";
 
 export abstract class TaskDefinition extends pulumi.ComponentResource {
     public readonly taskDefinition: aws.ecs.TaskDefinition;
@@ -322,6 +323,13 @@ export interface TaskDefinitionArgs {
      * based on the cumulative needs specified by [containerDefinitions]
      */
     cpu?: pulumi.Input<string>;
+
+    /**
+     * The amount (in GiB) of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     * amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate.
+     * See Ephemeral Storage.
+     */
+    ephemeralStorage?: pulumi.Input<inputs.ecs.TaskDefinitionEphemeralStorage>;
 
     /**
      * The execution role that the Amazon ECS container agent and the Docker daemon can assume.
