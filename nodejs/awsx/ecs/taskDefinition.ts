@@ -17,11 +17,11 @@ import * as pulumi from "@pulumi/pulumi";
 
 import * as awssdk from "aws-sdk";
 
+import { input as inputs } from "@pulumi/aws/types";
 import * as ecs from ".";
 import * as x from "..";
 import * as role from "../role";
 import * as utils from "../utils";
-import {input as inputs} from "@pulumi/aws/types";
 
 export abstract class TaskDefinition extends pulumi.ComponentResource {
     public readonly taskDefinition: aws.ecs.TaskDefinition;
