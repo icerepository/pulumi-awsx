@@ -270,6 +270,13 @@ export interface FargateTaskDefinitionArgs {
     placementConstraints?: aws.ecs.TaskDefinitionArgs["placementConstraints"];
 
     /**
+     * The amount (in GiB) of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     * amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate.
+     * See Ephemeral Storage.
+     */
+    ephemeralStorage?: aws.ecs.TaskDefinitionArgs["ephemeralStorage"];
+
+    /**
      * The proxy configuration details for the App Mesh proxy.
      */
     proxyConfiguration?: aws.ecs.TaskDefinitionArgs["proxyConfiguration"];
